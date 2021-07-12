@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50bdd44c-4765-45ee-9cd9-00cb699b1ef2" name="默认更改列表" comment="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/lenovo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/public_GUI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/main.exe.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/srcViewer_test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/srcViewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/srcViewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/srcViewer_test/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+              <folding>
+                <element signature="e#26#36#0" expanded="true" />
+                <element signature="e#146#924#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/srcViewer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+              <folding>
+                <element signature="e#129#1248#0" />
+                <element signature="e#2579#2790#0" />
+                <element signature="e#2877#3117#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>self.baseDir</find>
+      <find>listWight</find>
+      <find>setingDir</find>
+      <find>DataInput</find>
+      <find>DataManager</find>
+      <find>SetingWindow</find>
+      <find>fileTypeIgnore</find>
+      <find>dirRootList</find>
+      <find>fileType</find>
+      <find>allfiles</find>
+      <find>historySeting</find>
+      <find>txtDb</find>
+      <find>self.sleep</find>
+      <find>time.sleep(self.sleep)</find>
+      <find>updataState</find>
+      <find>newFile.seek</find>
+      <find>dbStateCheck</find>
+      <find>nextLine = oldFile.readline</find>
+      <find>modifyIndexData</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ShenWei &lt;748704677@qq.com&gt;" />
+        <option value="ShenWei" />
+        <option value="shenWei" />
+        <option value="路边的灰机场" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/test.txt" />
+        <option value="$PROJECT_DIR$/assets/myTxtDb.py" />
+        <option value="$PROJECT_DIR$/assets/test.py" />
+        <option value="$PROJECT_DIR$/test/txtdb_test.py" />
+        <option value="$PROJECT_DIR$/test/childWindow_test/test.py" />
+        <option value="$PROJECT_DIR$/windowUi/dataInput/dataInput_use.py" />
+        <option value="$PROJECT_DIR$/test/dataManagerLink_test/test.py" />
+        <option value="$PROJECT_DIR$/test/dataManagerLink_test/test.txt" />
+        <option value="$PROJECT_DIR$/test/setingWindowLink_test/test.py" />
+        <option value="$PROJECT_DIR$/config/seting.txt" />
+        <option value="$PROJECT_DIR$/windowUi/srcViewer/srcViewer.py" />
+        <option value="$PROJECT_DIR$/../imgViewerTool/pathDetection.py" />
+        <option value="$PROJECT_DIR$/../imgViewerTool/main.py" />
+        <option value="$PROJECT_DIR$/打包.txt" />
+        <option value="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py" />
+        <option value="$PROJECT_DIR$/windowUi/dataInput/dataInput.py" />
+        <option value="$PROJECT_DIR$/test/txtdb_test/test_2.py" />
+        <option value="$PROJECT_DIR$/config/history.txt" />
+        <option value="$PROJECT_DIR$/test/txtdb_test/txtdb_test.py" />
+        <option value="$PROJECT_DIR$/test/txtdb_test/test.txt" />
+        <option value="$PROJECT_DIR$/windowUi/dataManager/dataManager.py" />
+        <option value="$PROJECT_DIR$/assets/publicTools.py" />
+        <option value="$PROJECT_DIR$/assets/txtDataBase.py" />
+        <option value="$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/assets/srcViewer.py" />
+        <option value="$PROJECT_DIR$/test/srcViewer_test/test.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="134" />
+    <option name="y" value="134" />
+    <option name="width" value="1474" />
+    <option name="height" value="804" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="public_GUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="public_GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="public_GUI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="public_GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="MANAGE_IGNORE_FILES_PROPERTY" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\python-test\project2\public_GUI\windowUi\dataManager" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\python-test\project2\public_GUI\test\dataManagerLink_test" />
+      <recent name="B:\python-test\project2\public_GUI" />
+      <recent name="B:\python-test\project2\public_GUI\test\txtdb_test" />
+      <recent name="B:\python-test\project2\public_GUI\test" />
+      <recent name="B:\python-test\project2\public_GUI\assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="public_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="public_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="public_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/srcViewer_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/srcViewer_test/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="public_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/txtdb_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/txtdb_test/test_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="txtdb_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="public_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/txtdb_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/txtdb_test/txtdb_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.txtdb_test" />
+        <item itemvalue="Python.test_2" />
+        <item itemvalue="Python.test (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50bdd44c-4765-45ee-9cd9-00cb699b1ef2" name="默认更改列表" comment="" />
+      <created>1625062321730</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625062321730</updated>
+      <workItem from="1625062322884" duration="4796000" />
+      <workItem from="1625120398605" duration="20556000" />
+      <workItem from="1625151895773" duration="4113000" />
+      <workItem from="1625203829639" duration="5843000" />
+      <workItem from="1625534859313" duration="35357000" />
+      <workItem from="1625622586419" duration="2074000" />
+      <workItem from="1625629438618" duration="213000" />
+      <workItem from="1625665162735" duration="8647000" />
+      <workItem from="1625708401308" duration="32858000" />
+      <workItem from="1625795300261" duration="48628000" />
+      <workItem from="1625881699632" duration="25051000" />
+      <workItem from="1625910055056" duration="17158000" />
+      <workItem from="1625931259281" duration="99000" />
+      <workItem from="1625931376344" duration="18000" />
+      <workItem from="1625931411047" duration="53000" />
+      <workItem from="1625931484196" duration="1323000" />
+      <workItem from="1625932834552" duration="3730000" />
+      <workItem from="1625968541348" duration="6082000" />
+      <workItem from="1625974703188" duration="4483000" />
+      <workItem from="1625980205519" duration="54000" />
+      <workItem from="1625988816531" duration="2183000" />
+      <workItem from="1626000821366" duration="219000" />
+      <workItem from="1626054492452" duration="633000" />
+      <workItem from="1626055147853" duration="12743000" />
+    </task>
+    <task id="LOCAL-00001" summary="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化">
+      <created>1626061119828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626061119828</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="236914000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1390" height="747" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22030075" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" id="Run" order="3" visible="true" weight="0.5887218" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5335516" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="调试" order="10" weight="0.32952693" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5220949" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/public_GUI$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1625848496747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../imgViewerTool" />
+    <SUITE FILE_PATH="coverage/public_GUI$dataInput.coverage" NAME="dataInput Coverage Results" MODIFIED="1625720868123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/dataInput" />
+    <SUITE FILE_PATH="coverage/public_GUI$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1625822402376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/setingWindowLink_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$txtdb_test__1_.coverage" NAME="txtdb_test (1) Coverage Results" MODIFIED="1625666802539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/txtdb_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$test_2.coverage" NAME="test_2 Coverage Results" MODIFIED="1625969419687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/txtdb_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$txtdb_test.coverage" NAME="txtdb_test Coverage Results" MODIFIED="1625978251588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/txtdb_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$srcViewer.coverage" NAME="srcViewer Coverage Results" MODIFIED="1625819831912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/srcViewer" />
+    <SUITE FILE_PATH="coverage/public_GUI$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1625892682511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/public_GUI$txtDataBase.coverage" NAME="txtDataBase Coverage Results" MODIFIED="1625713947055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets" />
+    <SUITE FILE_PATH="coverage/public_GUI$dataManager.coverage" NAME="dataManager Coverage Results" MODIFIED="1625729527340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/dataManager" />
+    <SUITE FILE_PATH="coverage/public_GUI$test.coverage" NAME="test Coverage Results" MODIFIED="1626070391816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/srcViewer_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$main.coverage" NAME="main Coverage Results" MODIFIED="1626000891007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/public_GUI$dataInput_use.coverage" NAME="dataInput_use Coverage Results" MODIFIED="1625716097442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/dataInput" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/windowUi/dataInput/dataInput_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/dataManager/dataManager_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/requests_url_get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/Url_Get_test/80sVedio/tutorial/tutorial/spiders/80S_sipder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="53" column="57" lean-forward="true" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/Filedata_copy/GUI_nature_set.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../project/Filedata_copy/backup_GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/seting/DirIgnore.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/seting/DirList.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dataManagerLink_test/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/setingWindow/setingWindow_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2489" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/seting/ExtIgnore.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/seting/ExtList.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/seting/OtherSeting.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/history.txt" />
+    <entry file="file://$PROJECT_DIR$/windowUi/dataManager/dataManager.ui">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/default/DirIgnore.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/default/DirList.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/default/ExtIgnore.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/default/ExtList.txt" />
+    <entry file="file://$PROJECT_DIR$/test/setingWindowLink_test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#267#402#0" />
+            <element signature="e#418#549#0" />
+            <element signature="e#624#731#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/default/OtherSeting.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/mySeting/DirIgnore.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/mySeting/ExtIgnore.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/mySeting/DirList.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/mySeting_1/OtherSeting.txt" />
+    <entry file="file://$PROJECT_DIR$/../imgViewerTool/pathDetection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="n#!!doc" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="65" column="26" lean-forward="true" selection-start-line="53" selection-start-column="4" selection-end-line="65" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../package_problem/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/seting.txt" />
+    <entry file="file://$PROJECT_DIR$/../imgViewerTool/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="2" column="17" selection-start-line="2" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/游戏王/DirList.txt" />
+    <entry file="file://$PROJECT_DIR$/seting/游戏王/ExtList.txt" />
+    <entry file="file://$PROJECT_DIR$/windowUi/dataInput/dataInput.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/txtdb_test/test_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dataManagerLink_test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/txtdb_test/txtdb_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <element signature="e#168#202#0" />
+            <element signature="e#592#624#0" />
+            <element signature="e#1047#1109#0" />
+            <element signature="e#1474#1491#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/txtdb_test/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/dataManager/dataManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1900">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="47" />
+          <folding>
+            <element signature="e#406#1072#0" />
+            <element signature="e#1164#1408#0" />
+            <element signature="e#1488#1512#0" />
+            <element signature="e#1617#1673#0" />
+            <element signature="e#1772#2081#0" />
+            <element signature="e#2182#2462#0" />
+            <element signature="e#2536#3348#0" />
+            <element signature="e#3419#4341#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="90" column="78" lean-forward="true" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
+          <folding>
+            <element signature="e#25#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/history.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/DirList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/txtDataBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding>
+            <element signature="e#26#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/publicTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/browser/css/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding>
+            <element signature="e#26#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="163" column="81" lean-forward="true" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="81" />
+          <folding>
+            <element signature="e#592#1562#0" />
+            <element signature="e#1621#1813#0" />
+            <element signature="e#1886#2998#0" />
+            <element signature="e#2081#2141#0" />
+            <element signature="e#2204#2420#0" />
+            <element signature="e#2299#2420#0" />
+            <element signature="e#2575#2716#0" />
+            <element signature="e#2784#2998#0" />
+            <element signature="e#2879#2998#0" />
+            <element signature="e#3004#3040#0" />
+            <element signature="e#3101#3440#0" />
+            <element signature="e#3158#3229#0" />
+            <element signature="e#3507#3943#0" />
+            <element signature="e#3565#3636#0" />
+            <element signature="e#4017#4244#0" />
+            <element signature="e#4294#4390#0" />
+            <element signature="e#4444#4648#0" />
+            <element signature="e#4843#4957#0" />
+            <element signature="e#5508#5563#0" />
+            <element signature="e#5697#5986#0" />
+            <element signature="e#6042#6170#0" />
+            <element signature="e#6176#6212#0" />
+            <element signature="e#6283#6549#0" />
+            <element signature="e#6617#6837#0" />
+            <element signature="e#6909#8742#0" />
+            <element signature="e#6967#7018#0" />
+            <element signature="e#7144#7219#0" />
+            <element signature="e#7358#7438#0" />
+            <element signature="e#7465#8178#0" />
+            <element signature="e#7549#7679#0" />
+            <element signature="e#7804#7897#0" />
+            <element signature="e#8187#8244#0" />
+            <element signature="e#8454#8520#0" />
+            <element signature="e#8455#8519#0" />
+            <element signature="e#8816#9406#0" />
+            <element signature="e#8857#8908#0" />
+            <element signature="e#9156#9406#0" />
+            <element signature="e#9475#10795#0" />
+            <element signature="e#9532#9601#0" />
+            <element signature="e#10077#10218#0" />
+            <element signature="e#10286#10402#0" />
+            <element signature="e#10867#11955#0" />
+            <element signature="e#10923#10974#0" />
+            <element signature="e#11171#11240#0" />
+            <element signature="e#11325#11409#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/srcViewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding>
+            <element signature="e#129#1248#0" />
+            <element signature="e#2579#2790#0" />
+            <element signature="e#2877#3117#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/srcViewer_test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+          <folding>
+            <element signature="e#26#36#0" expanded="true" />
+            <element signature="e#146#924#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

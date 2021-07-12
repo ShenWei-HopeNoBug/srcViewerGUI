@@ -11,4 +11,5 @@ __pycache__/
 /dist/
 
 # FILE
-package.txt
+/package.txt
+/main.spec

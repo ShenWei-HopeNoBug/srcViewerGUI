@@ -48,21 +48,26 @@ def pathDetection(pathList):
 # dirIgnore：忽略文件夹根目录序列
 # extIgnore：指定要忽略的文件的扩展名
 # extList：指定要操作的文件的扩展名
-def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[]):
-    filePathList = []
-    dirIgnoreSet = set()  # 忽略文件夹集合
-    # 扫描忽略文件文件夹根目录
-    for path in dirIgnore:
-        ignorefiles = os.walk(path)
-        for root, dirs, files in ignorefiles:
-            dirIgnoreSet.add(root)
-
+def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[], sizeRange=[0, 4]):
+    # 变为绝对路径(不存在的绝对路径会被删除)
+    dirList = [os.path.abspath(path) for path in dirList]
+    dirIgnore = [os.path.abspath(path) for path in dirIgnore]
+    print(dirList)
+    print(dirIgnore)
+    filePathList = []  # 保存结果
+    print('>>筛选搜索列表', dirList)
     # 扫描所有文件
     while dirList:
         dirRoot = os.walk(dirList.pop(0))
         for root, dirs, files in dirRoot:
-            if root in dirIgnoreSet:
+            if root in dirIgnore:
                 continue
+            print('---------- s ---------')
+            print('>>原dirs', root, dirs)
+            dirs = [path for path in dirs
+                    if os.path.join(root, path) not in dirIgnore]
+            print('>>改dirs', dirs)
+            print('---------- e ---------')
             if extIgnore and extList:
                 files = [file for file in files
                          if os.path.splitext(file)[-1] not in extIgnore and
@@ -70,14 +75,21 @@ def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[]):
                          ]
             # 把要忽略的文件去除
             elif extIgnore:
-                files = [file for file in files if os.path.splitext(file)[-1] not in extIgnore]
+                files = [file for file in files
+                         if os.path.splitext(file)[-1] not in extIgnore]
 
             # 把指定的文件类型筛选出来
             elif extList:
-                files = [file for file in files if os.path.splitext(file)[-1] in extList]
+                files = [file for file in files
+                         if os.path.splitext(file)[-1] in extList]
 
-            path = ['{}\\{}'.format(root, file) for file in files]
-            filePathList.extend(path)
+            # 拼接路径筛选大小
+            for file in files:
+                path = os.path.join(root, file)
+                fileSize = os.path.getsize(path) / float(1024 * 1024)
+                if (fileSize <= sizeRange[1] and fileSize >= sizeRange[0]):
+                    filePathList.append(path)
+
     return filePathList
 
 
