@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# package
+# IDE
+.idea/
+__pycache__/
+
+# root
+/browser/
+/build/
+/dist/
+
+# FILE
+package.txt
