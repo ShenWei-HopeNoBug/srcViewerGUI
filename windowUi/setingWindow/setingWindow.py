@@ -41,9 +41,11 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         # 绑定事件
         self.spinBoxMaxRow.valueChanged.connect(self._maxRowChanged)
         self.spinBoxStartPage.valueChanged.connect(self._startPageChanged)
+        self.spinBoxSizeMin.valueChanged.connect(self._sizeMinChanged)
+        self.spinBoxSizeMax.valueChanged.connect(self._sizeMaxChanged)
+        self.checkBoxPlace.stateChanged.connect(self._placeChanged)
         self.rbtnGroup.buttonClicked.connect(self._modelChanged)
         self.btnGroup.buttonClicked.connect(self._setingModify)
-        self.btnBoxConfirm.clicked.connect(self._savOtherSeting)
 
     # 初始化UI
     @errMsgBox
@@ -51,9 +53,15 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         self.setupUi(self)
         self.setWindowTitle('修改配置')
         self.titleLabel.setText('配置文件名：{}'.format(self.dbBaseDir.split('/')[-1]))
-        # 限制计数器下限
+        # 限制计数器上下限
         self.spinBoxMaxRow.setMinimum(1)
+        self.spinBoxMaxRow.setMaximum(12)
         self.spinBoxStartPage.setMinimum(1)
+        self.spinBoxStartPage.setMaximum(9999999)
+        self.spinBoxSizeMin.setMinimum(0)
+        self.spinBoxSizeMin.setMaximum(10240)
+        self.spinBoxSizeMax.setMinimum(1)
+        self.spinBoxSizeMax.setMaximum(20480)
         # 加载配置
         self.loadSeting()
 
@@ -63,15 +71,20 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     def loadSeting(self):
         # 操作数据库
         self.txtDb.path = self.dbBaseDir + self.dbPathList[4]  # 修改dbtxt路径
-        self.otherSeting = dbStateCheck(self, self.txtDb.printDatas, ['3', '1', '1'])
+        self.otherSeting = dbStateCheck(self, self.txtDb.printDatas, ['3', '1', '1', '0', '10', '0'])
         # 设置计数框
         self.spinBoxMaxRow.setValue(int(self.otherSeting[0]))
         self.spinBoxStartPage.setValue(int(self.otherSeting[1]))
+        self.spinBoxSizeMin.setValue(int(self.otherSeting[3]))
+        self.spinBoxSizeMax.setValue(int(self.otherSeting[4]))
         # 设置单选按钮
         if (self.otherSeting[2] == '1'):
             self.rbtnImage.click()
         else:
             self.rbtnVideo.click()
+        # 设置勾选框
+        if (int(self.otherSeting[5])):
+            self.checkBoxPlace.click()
 
     # 打开修改配置子窗口
     @errMsgBox
@@ -80,17 +93,33 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         modifyWindow = DataManager(dataName, dbWorkPath)
         modifyWindow.exec()
 
-    # ------------------------------绑定事件
-    # 保存修改的otherSeting配置并退出
-    @errMsgBox
-    def _savOtherSeting(self, btn):
-        if (btn.text() == 'OK'):
-            # 操作数据库
-            modifyDict = {index + 1: value for index, value in enumerate(self.otherSeting)}
-            self.txtDb.path = self.dbBaseDir + self.dbPathList[4]  # 修改dbtxt路径
-            dbStateCheck(self, self.txtDb.modifyIndexData, None, [modifyDict])
-        self.close()
+    # 弹出询问框
+    def questionBox(self, msg):
+        return QtWidgets.QMessageBox.question(
+            self,
+            '询问',
+            msg,
+            QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+            QtWidgets.QMessageBox.No
+        )
 
+    # 保存修改的otherSeting配置
+    @errMsgBox
+    def savOtherSeting(self):
+        # 操作数据库
+        modifyDict = {index + 1: value for index, value in enumerate(self.otherSeting)}
+        self.txtDb.path = self.dbBaseDir + self.dbPathList[4]  # 修改dbtxt路径
+        dbStateCheck(self, self.txtDb.modifyIndexData, None, [modifyDict])
+
+    # 关闭窗口确认并保存修改配置
+    def closeEvent(self, event):
+        if (self.questionBox("修改配置完成？") == QtWidgets.QMessageBox.Yes):
+            self.savOtherSeting()
+            event.accept()
+        else:
+            event.ignore()
+
+    # ------------------------------绑定事件
     # 单页行数变化
     @errMsgBox
     def _maxRowChanged(self, value):
@@ -106,6 +135,29 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     def _modelChanged(self, rbtn):
         # 存储按钮id号
         self.otherSeting[2] = str(self.rbtnGroup.id(rbtn))
+
+    # 文件大小下限变化
+    @errMsgBox
+    def _sizeMinChanged(self, value):
+        maxSize = self.spinBoxSizeMax.value()
+        if (value >= maxSize):
+            self.spinBoxSizeMax.setValue(value + 1)
+        self.otherSeting[3] = str(value)
+
+    @errMsgBox
+    # 文件大小上限变化
+    def _sizeMaxChanged(self, value):
+        minSize = self.spinBoxSizeMin.value()
+        if (value <= minSize):
+            self.spinBoxSizeMax.setValue(value - 1)
+        self.otherSeting[4] = str(value)
+
+    # 单选框被点击
+    @errMsgBox
+    def _placeChanged(self, state):
+        if (state == 2):
+            state = 1
+        self.otherSeting[5] = str(state)
 
     # 根据按钮id打开对应修改窗口
     @errMsgBox

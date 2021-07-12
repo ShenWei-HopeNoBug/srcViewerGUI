@@ -3,28 +3,28 @@
 import os
 
 
-# ------------去除被包含的路径和重名的路径
+# ------------去除被包含的路径和重名的路径(输入\\的绝对路径)
 # 注意：相同的字符输入法输入字体不一样可能会判断为不同
 def pathDetection(pathList):
-    # 将右斜杠的路径转换成左斜杠
-    pathList = [path.replace('\\', '/') for path in pathList]
+    # 将左斜杠的路径转换成右斜杠
     oldPathList = pathList
     # 去重并按字符串长度从小到大排序
     pathList = list(set(pathList))
+    pathList = [path for path in pathList if os.path.exists(path)]  # 去除不存在的文件夹路径
     pathList = sorted(pathList, key=lambda i: len(i), reverse=True)
 
     newPathList = []  # 保留的路径
     # 去除被包含的路径
     while pathList:
         newPathList.append(pathList[-1])  # 取出待比较路径
-        compStr = pathList.pop().split('/')
+        compStr = pathList.pop().split('\\')
         compLen = len(compStr)
 
         removeList = []  # 本次比较要删除的路径
 
         deleteflg = True  # 删除标志（True删除False保留）
         for path in pathList:
-            keywords = path.split('/')
+            keywords = path.split('\\')
             # 长度相同不进行比较
             if len(keywords) <= compLen:
                 continue
@@ -43,31 +43,31 @@ def pathDetection(pathList):
     return newPathList
 
 
-# ------------提取搜索根目录下筛选文件地址序列
+# ------------提取搜索根目录下筛选文件地址序列(输入\\的绝对路径)
 # dirList：扫描根目录路径序列
 # dirIgnore：忽略文件夹根目录序列
 # extIgnore：指定要忽略的文件的扩展名
 # extList：指定要操作的文件的扩展名
-def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[], sizeRange=[0, 4]):
-    # 变为绝对路径(不存在的绝对路径会被删除)
-    dirList = [os.path.abspath(path) for path in dirList]
-    dirIgnore = [os.path.abspath(path) for path in dirIgnore]
-    print(dirList)
-    print(dirIgnore)
+# sizeOption：指定筛选文件大小和超出范围是否写入默认路径(0：不写入，1：写入)
+def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
+                    sizeOption=[0, 4, 1], defautPath=''):
+    # 去除不存在的文件夹路径
+    dirList = [path for path in dirList if os.path.exists(path)]
+    if dirIgnore:
+        dirIgnore = [path for path in dirIgnore if os.path.exists(path)]
+    # defautPath判断
+    if not defautPath or not os.path.exists(defautPath):
+        sizeOption[2] = 0
     filePathList = []  # 保存结果
-    print('>>筛选搜索列表', dirList)
     # 扫描所有文件
     while dirList:
         dirRoot = os.walk(dirList.pop(0))
         for root, dirs, files in dirRoot:
             if root in dirIgnore:
                 continue
-            print('---------- s ---------')
-            print('>>原dirs', root, dirs)
+            # 去除忽略的文件夹
             dirs = [path for path in dirs
                     if os.path.join(root, path) not in dirIgnore]
-            print('>>改dirs', dirs)
-            print('---------- e ---------')
             if extIgnore and extList:
                 files = [file for file in files
                          if os.path.splitext(file)[-1] not in extIgnore and
@@ -83,19 +83,21 @@ def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[], sizeRange=[
                 files = [file for file in files
                          if os.path.splitext(file)[-1] in extList]
 
-            # 拼接路径筛选大小
+            # 拼接路径和筛选大小
             for file in files:
                 path = os.path.join(root, file)
                 fileSize = os.path.getsize(path) / float(1024 * 1024)
-                if (fileSize <= sizeRange[1] and fileSize >= sizeRange[0]):
+                if (fileSize <= sizeOption[1] and fileSize >= sizeOption[0]):
                     filePathList.append(path)
+                elif (sizeOption[2]):
+                    filePathList.append(defautPath)
 
     return filePathList
 
 
 # 把路径写入JS文件中'GB2312'
 def writePathTojs(pathList, path):
-    pathList = [r'"{}",'.format(path).replace('\\', '/') for path in pathList]
+    pathList = ['"{}",'.format(path).replace('\\', '/') for path in pathList]
     data = r'const pathList=[{}];'.format('\n'.join(pathList))
     with open(path, 'w', encoding='GB2312') as fl:
         fl.write(data)

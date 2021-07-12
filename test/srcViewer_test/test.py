@@ -39,15 +39,19 @@ if __name__ == '__main__':
     # ------------------创建测试文件集
     makeTestFiles()
     pathList = [
-        r'C:\Users\lenovo\Desktop\test',
+        r'C:\Users\lenovo\Desktop/test',
         r'C:\Users\lenovo\Desktop\test\test21',
         r'C:\Users\lenovo\Desktop\test\哈哈',
         r'G:\视频\憨豆先生',
+        r'hahah'
     ]
     pathIgnore = [
         r'C:\Users\lenovo\Desktop\test\test1',
         r'C:\Users\lenovo\Desktop\test\test11',
     ]
+    pathList = [os.path.abspath(path) for path in pathList]
+    pathIgnore = [os.path.abspath(path) for path in pathIgnore]
+
     pathList = pathDetection(pathList)
     print('>>搜索文件夹：')
     for path in pathList:
@@ -58,7 +62,8 @@ if __name__ == '__main__':
         pathIgnore,
         ['.txt', '.mp4'],
         ['.xls'],
-        [0, 100]
+        [0, 2, 1],
+        'lala'
     )
     print('>>文件：')
     for path in res:

@@ -166,7 +166,7 @@ class TxtDatabase(object):
     # -----------------------------查
     # 查找指定索引的数据内容(索引从1开始)
     # 超出范围的索引结果返回None
-    # 返回一一对应的index序列
+    # 返回一一对应的data序列
     @tryFunc
     def findIndexData(self, indexArray):
         indexLen = len(indexArray)
@@ -180,7 +180,7 @@ class TxtDatabase(object):
         if (not indexLen or (not inCount)):
             return {
                 'state': False,
-                'reason': '输入查找索引序列为空或索引全部超出范围'
+                'msg': '输入查找索引序列为空或索引全部超出范围'
             }
         # -----开始查找指定索引数据
         maxIndex = max(indexArray)  # 输入序列最大索引
@@ -215,7 +215,7 @@ class TxtDatabase(object):
         if (not dataLen):
             return {
                 'state': False,
-                'reason': '输入查找内容序列为空'
+                'msg': '输入查找内容序列为空'
             }
         dataSum = self.getDataSum()['data']
         indexDict = {data: [-1] for data in dataArray}  # 结果字典
@@ -326,7 +326,7 @@ class TxtDatabase(object):
         if (not len(indexArray)):
             return {
                 'state': False,
-                'reason': '输入删除索引序列为空'
+                'msg': '输入删除索引序列为空'
             }
         # 滤除超出范围的索引并升序排序
         dataSum = self.getDataSum()['data']
@@ -381,7 +381,7 @@ class TxtDatabase(object):
         if (not len(dataArray)):
             return {
                 'state': False,
-                'reason': '输入删除内容序列为空'
+                'msg': '输入删除内容序列为空'
             }
         # 开始删除
         count = 0

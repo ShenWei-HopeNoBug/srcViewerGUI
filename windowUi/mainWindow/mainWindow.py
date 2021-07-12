@@ -83,7 +83,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
             [],
             ['.png', '.jpg', '.gif'],
             [],
-            ['3', '1', '1'],
+            ['3', '1', '1', '0', '10', '0'],
         ]
         for index, flie in enumerate(self.dbPathList):
             setingPath = dbBaseDir + flie
@@ -155,14 +155,28 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         for file in self.dbPathList[0:4]:
             self.txtDb.path = basePath + file
             pathSetingList.append(dbStateCheck(self, self.txtDb.printDatas, []))
-        # 去除重复和被包含的路径
+        # 读取大小筛选信息
+        self.txtDb.path = basePath + self.dbPathList[4]
+        sizeOption = dbStateCheck(
+            self,
+            self.txtDb.findIndexData,
+            ['', '0', '10', '0'],
+            [[3, 4, 5, 6]]
+        )
+        pathSetingList.append([int(seting) for seting in sizeOption[1:]])
+        if (sizeOption[0] == '1'):
+            pathSetingList.append(os.path.abspath('./browser/src/img/outSize.jpg'))
+        elif (sizeOption[0] == '2'):
+            pathSetingList.append(os.path.abspath('./browser/src/video/outSize.mp4'))
+        # 转换成绝对路径
+        pathSetingList[0] = [os.path.abspath(path) for path in pathSetingList[0]]
+        pathSetingList[1] = [os.path.abspath(path) for path in pathSetingList[1]]
+        # 去重和删除被包含的路径
         pathSetingList[0] = pathDetection(pathSetingList[0])
         pathSetingList[1] = pathDetection(pathSetingList[1])
         pathSetingList[2] = list(set(pathSetingList[2]))
         pathSetingList[3] = list(set(pathSetingList[3]))
         # 将路径变为绝对路径
-        pathSetingList[0] = [os.path.abspath(path) for path in pathSetingList[0]]
-        pathSetingList[1] = [os.path.abspath(path) for path in pathSetingList[1]]
         pathList = getSortPathList(*pathSetingList)
         # 写入路径配置
         if (not pathList):
@@ -174,7 +188,12 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     # 读取显示配置并写入JS
     def rwShowList(self):
         self.txtDb.path = self.rootDir + self.setingName + self.dbPathList[4]
-        showSetingList = dbStateCheck(self, self.txtDb.printDatas, [])
+        showSetingList = dbStateCheck(
+            self,
+            self.txtDb.findIndexData,
+            ['3', '1', '1'],
+            [[1, 2, 3]]
+        )
         showSetingList = [int(value) for value in showSetingList]
         # 写入显示配置
         writeShowTojs("./browser/js/options.js", *showSetingList)
@@ -306,7 +325,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
             [],
             ['.png', '.jpg', '.gif'],
             [],
-            ['3', '1', '1'],
+            ['3', '1', '1', '0', '10', '0'],
         ]
         for index, file in enumerate(self.dbPathList):
             self.txtDb.path = basePath + file

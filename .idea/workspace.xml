@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50bdd44c-4765-45ee-9cd9-00cb699b1ef2" name="默认更改列表" comment="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/lenovo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/public_GUI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/main.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/srcViewer_test/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="50bdd44c-4765-45ee-9cd9-00cb699b1ef2" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/srcViewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/srcViewer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/txtDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/txtDataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/history.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/seting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/seting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/default/DirIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/default/DirList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/default/ExtIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/default/ExtList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/default/OtherSeting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/test/DirIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/test/DirList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/test/ExtIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/test/ExtList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/test/OtherSeting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/游戏王/DirIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/游戏王/DirList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/游戏王/ExtIgnore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/游戏王/ExtList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seting/游戏王/OtherSeting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/srcViewer_test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/srcViewer_test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/windowUi/setingWindow/setingWindow_ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,27 +37,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/srcViewer_test/test.py">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+            <state relative-caret-position="184">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
                 <element signature="e#26#36#0" expanded="true" />
-                <element signature="e#146#924#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/srcViewer.py">
+        <entry file="file://$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+            <state relative-caret-position="138">
+              <caret line="166" column="34" lean-forward="true" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
               <folding>
-                <element signature="e#129#1248#0" />
-                <element signature="e#2579#2790#0" />
-                <element signature="e#2877#3117#0" />
+                <element signature="e#592#1562#0" />
+                <element signature="e#1621#1813#0" />
+                <element signature="e#1886#3014#0" />
+                <element signature="e#2081#2141#0" />
+                <element signature="e#2204#2420#0" />
+                <element signature="e#2299#2420#0" />
+                <element signature="e#2575#2732#0" />
+                <element signature="e#2800#3014#0" />
+                <element signature="e#2895#3014#0" />
+                <element signature="e#3020#3056#0" />
+                <element signature="e#3117#3456#0" />
+                <element signature="e#3174#3245#0" />
+                <element signature="e#3523#3959#0" />
+                <element signature="e#3581#3652#0" />
+                <element signature="e#4033#4260#0" />
+                <element signature="e#4310#4406#0" />
+                <element signature="e#4460#4664#0" />
+                <element signature="e#6165#6611#0" />
+                <element signature="e#6954#7220#0" />
+                <element signature="e#7288#7508#0" />
               </folding>
             </state>
           </provider>
@@ -90,6 +109,7 @@
       <find>dbStateCheck</find>
       <find>nextLine = oldFile.readline</find>
       <find>modifyIndexData</find>
+      <find>otherSeting</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,7 +145,6 @@
         <option value="$PROJECT_DIR$/../imgViewerTool/pathDetection.py" />
         <option value="$PROJECT_DIR$/../imgViewerTool/main.py" />
         <option value="$PROJECT_DIR$/打包.txt" />
-        <option value="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py" />
         <option value="$PROJECT_DIR$/windowUi/dataInput/dataInput.py" />
         <option value="$PROJECT_DIR$/test/txtdb_test/test_2.py" />
         <option value="$PROJECT_DIR$/config/history.txt" />
@@ -133,13 +152,14 @@
         <option value="$PROJECT_DIR$/test/txtdb_test/test.txt" />
         <option value="$PROJECT_DIR$/windowUi/dataManager/dataManager.py" />
         <option value="$PROJECT_DIR$/assets/publicTools.py" />
-        <option value="$PROJECT_DIR$/assets/txtDataBase.py" />
-        <option value="$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/assets/srcViewer.py" />
         <option value="$PROJECT_DIR$/test/srcViewer_test/test.py" />
+        <option value="$PROJECT_DIR$/assets/srcViewer.py" />
+        <option value="$PROJECT_DIR$/assets/txtDataBase.py" />
+        <option value="$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py" />
+        <option value="$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py" />
       </list>
     </option>
   </component>
@@ -161,11 +181,6 @@
             <path>
               <item name="public_GUI" type="b2602c69:ProjectViewProjectNode" />
               <item name="public_GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="public_GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="public_GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,7 +222,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="public_GUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -320,8 +335,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.txtdb_test" />
         <item itemvalue="Python.test_2" />
         <item itemvalue="Python.test (2)" />
@@ -361,7 +376,7 @@
       <workItem from="1625988816531" duration="2183000" />
       <workItem from="1626000821366" duration="219000" />
       <workItem from="1626054492452" duration="633000" />
-      <workItem from="1626055147853" duration="12743000" />
+      <workItem from="1626055147853" duration="30404000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化">
       <created>1626061119828</created>
@@ -370,22 +385,29 @@
       <option name="project" value="LOCAL" />
       <updated>1626061119828</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化了路径搜索，增加了筛选文件大小的功能">
+      <created>1626070570623</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626070570623</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236914000" />
+    <option name="totallyTimeSpent" value="254575000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1390" height="747" extended-state="7" />
+    <frame x="-7" y="-7" width="1390" height="747" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22030075" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2518797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" id="Run" order="3" visible="true" weight="0.5887218" />
+      <window_info active="true" id="Run" order="3" visible="true" weight="0.32105264" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -394,7 +416,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.5335516" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="调试" order="10" weight="0.32952693" />
+      <window_info anchor="bottom" id="调试" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.5220949" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -435,7 +457,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0版本&#10;1.升级了GUI界面，&#10;2.有些特别的路径字符的处理有问题&#10;3.文件遍历逻辑上有待优化" />
+    <MESSAGE value="优化了路径搜索，增加了筛选文件大小的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化了路径搜索，增加了筛选文件大小的功能" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/public_GUI$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1625848496747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../imgViewerTool" />
@@ -448,39 +471,11 @@
     <SUITE FILE_PATH="coverage/public_GUI$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1625892682511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/public_GUI$txtDataBase.coverage" NAME="txtDataBase Coverage Results" MODIFIED="1625713947055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets" />
     <SUITE FILE_PATH="coverage/public_GUI$dataManager.coverage" NAME="dataManager Coverage Results" MODIFIED="1625729527340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/dataManager" />
-    <SUITE FILE_PATH="coverage/public_GUI$test.coverage" NAME="test Coverage Results" MODIFIED="1626070391816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/srcViewer_test" />
-    <SUITE FILE_PATH="coverage/public_GUI$main.coverage" NAME="main Coverage Results" MODIFIED="1626000891007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/public_GUI$test.coverage" NAME="test Coverage Results" MODIFIED="1626075036031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/srcViewer_test" />
+    <SUITE FILE_PATH="coverage/public_GUI$main.coverage" NAME="main Coverage Results" MODIFIED="1626089910648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/public_GUI$dataInput_use.coverage" NAME="dataInput_use Coverage Results" MODIFIED="1625716097442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windowUi/dataInput" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/windowUi/dataInput/dataInput_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/windowUi/dataManager/dataManager_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../project/requests_url_get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../project/Url_Get_test/80sVedio/tutorial/tutorial/spiders/80S_sipder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="53" column="57" lean-forward="true" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../project/Filedata_copy/GUI_nature_set.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -574,7 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/seting.txt" />
     <entry file="file://$PROJECT_DIR$/../imgViewerTool/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-400">
@@ -648,40 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="90" column="78" lean-forward="true" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
-          <folding>
-            <element signature="e#25#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/history.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seting/test/DirList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/txtDataBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#26#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/publicTools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -709,89 +669,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/test/srcViewer_test/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        <state relative-caret-position="309">
+          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
             <element signature="e#26#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="163" column="81" lean-forward="true" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="81" />
-          <folding>
-            <element signature="e#592#1562#0" />
-            <element signature="e#1621#1813#0" />
-            <element signature="e#1886#2998#0" />
-            <element signature="e#2081#2141#0" />
-            <element signature="e#2204#2420#0" />
-            <element signature="e#2299#2420#0" />
-            <element signature="e#2575#2716#0" />
-            <element signature="e#2784#2998#0" />
-            <element signature="e#2879#2998#0" />
-            <element signature="e#3004#3040#0" />
-            <element signature="e#3101#3440#0" />
-            <element signature="e#3158#3229#0" />
-            <element signature="e#3507#3943#0" />
-            <element signature="e#3565#3636#0" />
-            <element signature="e#4017#4244#0" />
-            <element signature="e#4294#4390#0" />
-            <element signature="e#4444#4648#0" />
-            <element signature="e#4843#4957#0" />
-            <element signature="e#5508#5563#0" />
-            <element signature="e#5697#5986#0" />
-            <element signature="e#6042#6170#0" />
-            <element signature="e#6176#6212#0" />
-            <element signature="e#6283#6549#0" />
-            <element signature="e#6617#6837#0" />
-            <element signature="e#6909#8742#0" />
-            <element signature="e#6967#7018#0" />
-            <element signature="e#7144#7219#0" />
-            <element signature="e#7358#7438#0" />
-            <element signature="e#7465#8178#0" />
-            <element signature="e#7549#7679#0" />
-            <element signature="e#7804#7897#0" />
-            <element signature="e#8187#8244#0" />
-            <element signature="e#8454#8520#0" />
-            <element signature="e#8455#8519#0" />
-            <element signature="e#8816#9406#0" />
-            <element signature="e#8857#8908#0" />
-            <element signature="e#9156#9406#0" />
-            <element signature="e#9475#10795#0" />
-            <element signature="e#9532#9601#0" />
-            <element signature="e#10077#10218#0" />
-            <element signature="e#10286#10402#0" />
-            <element signature="e#10867#11955#0" />
-            <element signature="e#10923#10974#0" />
-            <element signature="e#11171#11240#0" />
-            <element signature="e#11325#11409#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/srcViewer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+        <state relative-caret-position="175">
+          <caret line="52" column="57" lean-forward="true" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/DirIgnore.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/DirList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/ExtIgnore.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/ExtList.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seting/test/OtherSeting.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/txtDataBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2246">
+          <caret line="323" column="42" selection-start-line="323" selection-start-column="42" selection-end-line="323" selection-end-column="42" />
           <folding>
-            <element signature="e#129#1248#0" />
-            <element signature="e#2579#2790#0" />
-            <element signature="e#2877#3117#0" />
+            <element signature="e#912#1257#0" />
+            <element signature="e#1319#1555#0" />
+            <element signature="e#1661#2975#0" />
+            <element signature="e#2031#2080#0" />
+            <element signature="e#2124#2852#0" />
+            <element signature="e#3037#3231#0" />
+            <element signature="e#3302#3721#0" />
+            <element signature="e#3839#4116#0" />
+            <element signature="e#4187#4419#0" />
+            <element signature="e#4589#5763#0" />
+            <element signature="e#5884#6667#0" />
+            <element signature="e#6773#6875#0" />
+            <element signature="e#7048#8502#0" />
+            <element signature="e#8624#9731#0" />
+            <element signature="e#9895#11293#0" />
+            <element signature="e#11386#11540#0" />
+            <element signature="e#11659#12986#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/srcViewer_test/test.py">
+    <entry file="file://$PROJECT_DIR$/config/seting.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/history.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/setingWindow/setingWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+          <folding>
+            <element signature="e#25#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/windowUi/mainWindow/mainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="166" column="34" lean-forward="true" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
+          <folding>
+            <element signature="e#592#1562#0" />
+            <element signature="e#1621#1813#0" />
+            <element signature="e#1886#3014#0" />
+            <element signature="e#2081#2141#0" />
+            <element signature="e#2204#2420#0" />
+            <element signature="e#2299#2420#0" />
+            <element signature="e#2575#2732#0" />
+            <element signature="e#2800#3014#0" />
+            <element signature="e#2895#3014#0" />
+            <element signature="e#3020#3056#0" />
+            <element signature="e#3117#3456#0" />
+            <element signature="e#3174#3245#0" />
+            <element signature="e#3523#3959#0" />
+            <element signature="e#3581#3652#0" />
+            <element signature="e#4033#4260#0" />
+            <element signature="e#4310#4406#0" />
+            <element signature="e#4460#4664#0" />
+            <element signature="e#6165#6611#0" />
+            <element signature="e#6954#7220#0" />
+            <element signature="e#7288#7508#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="e#26#36#0" expanded="true" />
-            <element signature="e#146#924#0" />
           </folding>
         </state>
       </provider>
