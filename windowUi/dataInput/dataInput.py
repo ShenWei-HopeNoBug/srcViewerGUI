@@ -1,5 +1,5 @@
 # -*- coding: GB2312 -*-
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtWidgets, QtCore, QtGui
 from .dataInput_ui import Ui_DataInput
 
 
@@ -22,6 +22,7 @@ class DataInput(QtWidgets.QDialog, Ui_DataInput):
     # 初始化UI
     def initUi(self):
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.setFixedSize(self.width(), self.height())
         if (not self.winTitle == ''):
             self.setWindowTitle(self.winTitle)

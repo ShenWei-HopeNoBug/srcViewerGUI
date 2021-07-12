@@ -1,6 +1,6 @@
 # -*- coding: GB2312 -*-
 import re
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets,QtGui
 from .dataManager_ui import Ui_dataManager
 from windowUi.dataInput.dataInput import DataInput
 from assets.publicTools import errMsgBox, dbStateCheck
@@ -35,6 +35,7 @@ class DataManager(QtWidgets.QDialog, Ui_dataManager):
         self.setFixedSize(self.width(), self.height())
         self.dataNameLabel.setText("数据名：{}".format(self.dataName))
         self.setWindowTitle("【{}】数据管理".format(self.dataName))
+        self.setWindowIcon(QtGui.QIcon('icon.ico'))
         # 数据库加载数据
         self.itemLoad()
 

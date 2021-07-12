@@ -4,7 +4,7 @@ import os
 import time
 import shutil
 import webbrowser
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 from .mainWindow_ui import Ui_mainWindow
 from windowUi.setingWindow.setingWindow import SetingWindow
 from assets.publicTools import (
@@ -50,6 +50,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     def initUi(self):
         self.setupUi(self)
         self.setWindowTitle('资源预览v1.0      浙工大机械B406')
+        self.setWindowIcon(QtGui.QIcon('icon.ico'))
         # 检查和新建配置文件
         self.checkDefault()
         # 加载列表和历史记录
@@ -79,7 +80,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         if (not os.path.exists(dbBaseDir)):
             os.makedirs(dbBaseDir)
         initData = [
-            ['./browser/src'],
+            ['./browser/src/img'],
             [],
             ['.png', '.jpg', '.gif'],
             [],
@@ -321,7 +322,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         # 新建配置文件夹和文件
         os.makedirs(basePath)
         initData = [
-            ['./browser/src'],
+            ['./browser/src/img'],
             [],
             ['.png', '.jpg', '.gif'],
             [],

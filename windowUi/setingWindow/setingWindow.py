@@ -1,5 +1,5 @@
 # -*- coding: GB2312 -*-
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 from .setingWindow_ui import Ui_setingWindow
 from windowUi.dataManager.dataManager import DataManager
 from assets.publicTools import errMsgBox, dbStateCheck
@@ -53,6 +53,7 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         self.setupUi(self)
         self.setWindowTitle('修改配置')
         self.titleLabel.setText('配置文件名：{}'.format(self.dbBaseDir.split('/')[-1]))
+        self.setWindowIcon(QtGui.QIcon('icon.ico'))
         # 限制计数器上下限
         self.spinBoxMaxRow.setMinimum(1)
         self.spinBoxMaxRow.setMaximum(12)
