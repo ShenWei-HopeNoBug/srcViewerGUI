@@ -34,10 +34,11 @@ def tryFunc(func):
     return decorator
 
 
+# Ä¬ÈÏ±àÂë·½Ê½ GB18030
 class TxtDatabase(object):
     def __init__(self, path):
         self.path = path
-        self.encoding = 'GB2312'
+        self.encoding = 'GB18030'
         self.sumSignChar = '#'
         self.sumString = 'Sum'
         self.sumMaxBit = 64

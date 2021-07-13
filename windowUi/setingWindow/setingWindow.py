@@ -150,7 +150,7 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     def _sizeMaxChanged(self, value):
         minSize = self.spinBoxSizeMin.value()
         if (value <= minSize):
-            self.spinBoxSizeMax.setValue(value - 1)
+            self.spinBoxSizeMin.setValue(value - 1)
         self.otherSeting[4] = str(value)
 
     # 单选框被点击

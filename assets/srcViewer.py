@@ -95,19 +95,19 @@ def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
     return filePathList
 
 
-# 把路径写入JS文件中'GB2312'
-def writePathTojs(pathList, path):
+# 把路径写入JS文件中'GB18030'
+def writePathTojs(pathList, savPath, encoding='GB18030'):
     pathList = ['"{}",'.format(path).replace('\\', '/') for path in pathList]
-    data = r'const pathList=[{}];'.format('\n'.join(pathList))
-    with open(path, 'w', encoding='GB2312') as fl:
+    data = 'const pathList=[{}];'.format('\n'.join(pathList))
+    with open(savPath, 'w', encoding=encoding) as fl:
         fl.write(data)
 
 
-# 把显示信息写入JS文件中'GB2312'
-def writeShowTojs(path, maxRow=3, startPage=1, model=1):
+# 把显示信息写入JS文件中'GB18030'
+def writeShowTojs(savPath, maxRow=3, startPage=1, model=1, encoding='GB18030'):
     listType = 'image'
     if model == 2:
         listType = 'video'
     data = 'const maxRow={};\nconst listType="{}";\nlet page={};'.format(maxRow, listType, startPage)
-    with open(path, 'w', encoding='GB2312') as fl:
+    with open(savPath, 'w', encoding=encoding) as fl:
         fl.write(data)
