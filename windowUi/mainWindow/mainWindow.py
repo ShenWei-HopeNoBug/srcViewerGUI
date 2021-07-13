@@ -49,7 +49,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     @errMsgBox
     def initUi(self):
         self.setupUi(self)
-        self.setWindowTitle('资源预览v1.0      浙工大机械B406')
+        self.setWindowTitle('资源预览v1.01      浙工大机械B406')
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         # 检查和新建配置文件
         self.checkDefault()
@@ -165,10 +165,10 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
             [[3, 4, 5, 6]]
         )
         pathSetingList.append([int(seting) for seting in sizeOption[1:]])
-        if (sizeOption[0] == '1'):
-            pathSetingList.append(os.path.abspath('./browser/src/img/outSize.jpg'))
-        elif (sizeOption[0] == '2'):
-            pathSetingList.append(os.path.abspath('./browser/src/video/outSize.mp4'))
+        # if (sizeOption[0] == '1'):
+        #     pathSetingList.append(os.path.abspath('./browser/src/img/outSize.jpg'))
+        # elif (sizeOption[0] == '2'):
+        #     pathSetingList.append(os.path.abspath('./browser/src/video/outSize.mp4'))
         # 转换成绝对路径
         pathSetingList[0] = [os.path.abspath(path) for path in pathSetingList[0]]
         pathSetingList[1] = [os.path.abspath(path) for path in pathSetingList[1]]

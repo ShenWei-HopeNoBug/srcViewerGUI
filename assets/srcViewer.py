@@ -50,13 +50,13 @@ def pathDetection(pathList):
 # extList：指定要操作的文件的扩展名
 # sizeOption：指定筛选文件大小和超出范围是否写入默认路径(0：不写入，1：写入)
 def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
-                    sizeOption=[0, 4, 1], defautPath=''):
+                    sizeOption=[0, 4, 1], outChar='#'):
     # 去除不存在的文件夹路径
     dirList = [path for path in dirList if os.path.exists(path)]
     if dirIgnore:
         dirIgnore = [path for path in dirIgnore if os.path.exists(path)]
-    # defautPath判断
-    if not defautPath or not os.path.exists(defautPath):
+    # 在超出大小的路径前加的字符是否为空
+    if not outChar:
         sizeOption[2] = 0
     filePathList = []  # 保存结果
     # 扫描所有文件
@@ -90,7 +90,7 @@ def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
                 if (fileSize <= sizeOption[1] and fileSize >= sizeOption[0]):
                     filePathList.append(path)
                 elif (sizeOption[2]):
-                    filePathList.append(defautPath)
+                    filePathList.append('{}{}'.format(outChar, path))
 
     return filePathList
 
