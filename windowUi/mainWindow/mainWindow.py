@@ -51,6 +51,54 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         self.setupUi(self)
         self.setWindowTitle('资源预览v1.02      浙工大机械B406')
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
+        self.setFixedSize(self.width(), self.height())
+        # 设置美化样式
+        self.setWindowOpacity(0.95)
+        winStyle = '''
+        #mainWindow{
+            background-color:rgb(255, 224, 178);
+        }
+        
+        QListWidget{
+            background-color:rgb(255, 248, 225);
+            border:1px solid;
+        }
+        QListWidget::item{
+            background-color:transparent;
+            color:rgba(121,112,52,1);
+            border-radius:6px;
+            padding:2px 0;
+        }
+        QListWidget::item:hover{
+            border-bottom:1px solid rgb(121,112,52);
+        }
+        QListWidget::item:selected{
+            border-bottom:1px solid rgb(121,112,52);
+            color:rgb(255, 112, 67);
+        }
+
+        #btnLoadSeting,
+        #btnBrowser,
+        #btnNewSeting,
+        #btnModifySeting,
+        #btnDeleteSeting{
+            background-color:rgb(250, 250, 250);
+            border-radius:10px;
+            border: 1px solid skyblue;
+        }
+        
+        #btnLoadSeting:hover,
+        #btnBrowser:hover,
+        #btnNewSeting:hover,
+        #btnModifySeting:hover,
+        #btnDeleteSeting:hover{
+            color:white;
+            background-color:rgb(97, 97, 97);
+            border-width:0;
+            font-size:20px;
+        }
+        '''
+        self.setStyleSheet(winStyle)
         # 检查和新建配置文件
         self.checkDefault()
         # 加载列表和历史记录

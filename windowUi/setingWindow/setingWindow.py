@@ -54,6 +54,37 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         self.setWindowTitle('修改配置')
         self.titleLabel.setText('配置文件名：{}'.format(self.dbBaseDir.split('/')[-1]))
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
+        self.setFixedSize(self.width(), self.height())
+        # 设置美化样式
+        self.setWindowOpacity(0.95)
+        winStyle = '''
+        #setingWindow{
+            background-color:rgb(255, 224, 178);
+        }
+        
+        QSpinBox{
+            background-color:rgb(251,232,204)
+        }
+        
+        #btnDirList,
+        #btnDirIgnore,
+        #btnExtList,
+        #btnExtIgnore{
+            background-color:rgb(250, 250, 250);
+            border-radius:10px;
+            border: 1px solid skyblue;
+        }
+        #btnDirList:hover,
+        #btnDirIgnore:hover,
+        #btnExtList:hover,
+        #btnExtIgnore:hover{
+            color:white;
+            background-color:rgb(97, 97, 97);
+            border-width:0;
+            font-size:20px;
+        }
+        '''
+        self.setStyleSheet(winStyle)
         # 限制计数器上下限
         self.spinBoxMaxRow.setMinimum(1)
         self.spinBoxMaxRow.setMaximum(12)

@@ -28,7 +28,7 @@
      <x>40</x>
      <y>320</y>
      <width>680</width>
-     <height>226</height>
+     <height>230</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="vLayout_list">
@@ -82,7 +82,7 @@
           <property name="minimumSize">
            <size>
             <width>362</width>
-            <height>100</height>
+            <height>176</height>
            </size>
           </property>
           <property name="font">

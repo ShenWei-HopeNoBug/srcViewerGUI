@@ -1,10 +1,10 @@
 # -*- coding: GB2312 -*-
 from PyQt5 import QtWidgets, QtCore, QtGui
-from .dataInput_ui import Ui_DataInput
+from .dataInput_ui import Ui_dataInput
 
 
 # ********************************文本输入UI
-class DataInput(QtWidgets.QDialog, Ui_DataInput):
+class DataInput(QtWidgets.QDialog, Ui_dataInput):
     _signal = QtCore.pyqtSignal(str)
 
     def __init__(self, dataName, winTitle='', title='', initTxt=''):
@@ -33,6 +33,18 @@ class DataInput(QtWidgets.QDialog, Ui_DataInput):
         if (not self.initTxt == ''):
             self.textEdit.append(self.initTxt)
             self.textEdit.verticalScrollBar().setValue(0)
+            # 设置美化样式
+            self.setWindowOpacity(0.95)
+        winStyle = '''
+        #dataInput{
+            background-color:rgb(255, 224, 178);
+        }
+        
+        QTextEdit{
+            background-color:rgb(251,232,204);
+        }
+        '''
+        self.setStyleSheet(winStyle)
 
     # ----------------------绑定事件
     # 添加浏览路径

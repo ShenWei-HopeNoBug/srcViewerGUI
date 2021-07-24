@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>480</height>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -141,7 +141,7 @@
      <x>59</x>
      <y>210</y>
      <width>531</width>
-     <height>221</height>
+     <height>212</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -168,7 +168,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QListWidget" name="listWidget"/>
+     <widget class="QListWidget" name="listWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>210</height>
+       </size>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -176,7 +183,7 @@
        <widget class="QPushButton" name="btnNewSeting">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>104</width>
           <height>44</height>
          </size>
         </property>
@@ -195,7 +202,7 @@
        <widget class="QPushButton" name="btnModifySeting">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>104</width>
           <height>44</height>
          </size>
         </property>
@@ -214,7 +221,7 @@
        <widget class="QPushButton" name="btnDeleteSeting">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>104</width>
           <height>44</height>
          </size>
         </property>

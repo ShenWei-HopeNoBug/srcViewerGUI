@@ -1,6 +1,6 @@
 # -*- coding: GB2312 -*-
 import re
-from PyQt5 import QtWidgets,QtGui
+from PyQt5 import QtWidgets, QtGui
 from .dataManager_ui import Ui_dataManager
 from windowUi.dataInput.dataInput import DataInput
 from assets.publicTools import errMsgBox, dbStateCheck
@@ -36,6 +36,55 @@ class DataManager(QtWidgets.QDialog, Ui_dataManager):
         self.dataNameLabel.setText("数据名：{}".format(self.dataName))
         self.setWindowTitle("【{}】数据管理".format(self.dataName))
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
+        # 设置美化样式
+        self.setWindowOpacity(0.95)
+        winStyle = '''
+        #dataManager{
+            background-color:rgb(255, 224, 178);
+        }
+        
+        QListWidget{
+            background-color:rgb(255, 248, 225);
+            border:1px solid;
+        }
+        QListWidget::item{
+            background-color:transparent;
+            color:rgba(121,112,52,1);
+            border-radius:6px;
+            padding:2px 0;
+        }
+        QListWidget::item:hover{
+            border-bottom:1px solid rgb(121,112,52);
+        }
+        QListWidget::item:selected{
+            border-bottom:1px solid rgb(121,112,52);
+            color:rgb(255, 112, 67);
+        }
+        
+        QTextBrowser{
+            background-color:rgb(251,232,204);
+            color:rgb(64,62,31);
+        }
+        
+        #btnAddData,
+        #btnModifyData,
+        #btnDeleteData,
+        #btnClearAll{
+            background-color:rgb(250, 250, 250);
+            border-radius:10px;
+            border: 1px solid skyblue;
+        }
+        #btnAddData:hover,
+        #btnModifyData:hover,
+        #btnDeleteData:hover,
+        #btnClearAll:hover{
+            color:white;
+            background-color:rgb(97, 97, 97);
+            border-width:0;
+            font-size:20px;
+        }
+        '''
+        self.setStyleSheet(winStyle)
         # 数据库加载数据
         self.itemLoad()
 
@@ -163,7 +212,7 @@ class DataManager(QtWidgets.QDialog, Ui_dataManager):
         modifyWindow._signal.connect(self.getSignData)
         modifyWindow.exec()
         # 没有输入内容不修改
-        newData = self.signData.lstrip('\n').rstrip('\n')
+        newData = self.signData.replace('\n', '').lstrip(' ').rstrip(' ')
         self.signData = ''
         if (newData == '' or newData == oldData):
             return

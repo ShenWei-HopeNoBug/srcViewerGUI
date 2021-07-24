@@ -11,24 +11,24 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_DataInput(object):
-    def setupUi(self, DataInput):
-        DataInput.setObjectName("DataInput")
-        DataInput.resize(640, 480)
-        self.titleLabel = QtWidgets.QLabel(DataInput)
+class Ui_dataInput(object):
+    def setupUi(self, dataInput):
+        dataInput.setObjectName("dataInput")
+        dataInput.resize(640, 480)
+        self.titleLabel = QtWidgets.QLabel(dataInput)
         self.titleLabel.setGeometry(QtCore.QRect(20, 10, 561, 61))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(14)
         self.titleLabel.setFont(font)
         self.titleLabel.setObjectName("titleLabel")
-        self.btnAddPath = QtWidgets.QPushButton(DataInput)
+        self.btnAddPath = QtWidgets.QPushButton(dataInput)
         self.btnAddPath.setGeometry(QtCore.QRect(486, 78, 104, 32))
         font = QtGui.QFont()
         font.setFamily("宋体")
         self.btnAddPath.setFont(font)
         self.btnAddPath.setObjectName("btnAddPath")
-        self.verticalLayoutWidget = QtWidgets.QWidget(DataInput)
+        self.verticalLayoutWidget = QtWidgets.QWidget(dataInput)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 130, 541, 311))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -53,13 +53,13 @@ class Ui_DataInput(object):
         self.btnBoxConfirm.setObjectName("btnBoxConfirm")
         self.verticalLayout.addWidget(self.btnBoxConfirm)
 
-        self.retranslateUi(DataInput)
-        self.btnBoxConfirm.accepted.connect(DataInput.accept)
-        self.btnBoxConfirm.rejected.connect(DataInput.reject)
-        QtCore.QMetaObject.connectSlotsByName(DataInput)
+        self.retranslateUi(dataInput)
+        self.btnBoxConfirm.accepted.connect(dataInput.accept)
+        self.btnBoxConfirm.rejected.connect(dataInput.reject)
+        QtCore.QMetaObject.connectSlotsByName(dataInput)
 
-    def retranslateUi(self, DataInput):
+    def retranslateUi(self, dataInput):
         _translate = QtCore.QCoreApplication.translate
-        DataInput.setWindowTitle(_translate("DataInput", "Dialog"))
-        self.titleLabel.setText(_translate("DataInput", "请输入数据(输入多个数据请用Enter换行隔开)"))
-        self.btnAddPath.setText(_translate("DataInput", "添加路径"))
+        dataInput.setWindowTitle(_translate("dataInput", "Dialog"))
+        self.titleLabel.setText(_translate("dataInput", "请输入数据(输入多个数据请用Enter换行隔开)"))
+        self.btnAddPath.setText(_translate("dataInput", "添加路径"))

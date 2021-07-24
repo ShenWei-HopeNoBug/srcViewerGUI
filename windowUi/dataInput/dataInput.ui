@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DataInput</class>
- <widget class="QDialog" name="DataInput">
+ <class>dataInput</class>
+ <widget class="QDialog" name="dataInput">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -112,7 +112,7 @@
   <connection>
    <sender>btnBoxConfirm</sender>
    <signal>accepted()</signal>
-   <receiver>DataInput</receiver>
+   <receiver>dataInput</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -128,7 +128,7 @@
   <connection>
    <sender>btnBoxConfirm</sender>
    <signal>rejected()</signal>
-   <receiver>DataInput</receiver>
+   <receiver>dataInput</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
