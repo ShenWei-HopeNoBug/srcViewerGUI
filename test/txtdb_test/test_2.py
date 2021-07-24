@@ -20,7 +20,7 @@ if __name__ == '__main__':
         6: 'five'
     }
     # print(savData.modifyIndexData(dataDict))
-    print(savData.modifyIndexDataByCache(dataDict))
+    print(savData.modifyIndexData(dataDict))
     print('-' * 50)
     print('原数组：', oldList)
     print('修改后：', savData.printDatas()['data'])

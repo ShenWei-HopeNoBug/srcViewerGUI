@@ -6,7 +6,9 @@ from assets.txtDataBase import TxtDatabase
 if __name__ == '__main__':
     path = './test.txt'
     savData = TxtDatabase(path)
-    print(savData.sumCheck()['msg'])
+    # print(savData.initTxtDb()['msg'])
+    print(savData.fallback()['msg'])
+
     # print(savData.clearAll()['msg'])
     # -------------Ìí¼ÓÔªËØ
     # savData.addDatas([
@@ -72,5 +74,4 @@ if __name__ == '__main__':
     # print('>>', modifyData)
     # print('=>', savData.modifyDatas(modifyData)['msg'])
     # print(savData.printDatas()['data'])
-
     sys.exit(0)

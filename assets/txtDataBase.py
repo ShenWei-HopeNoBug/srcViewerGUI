@@ -39,7 +39,7 @@ class TxtDatabase(object):
     def __init__(self, path):
         self.path = path
         self.encoding = 'GB18030'
-        self.sumSignChar = '#'
+        self.signChar = '#'
         self.sumString = 'Sum'
         self.sumMaxBit = 64
 
@@ -54,13 +54,13 @@ class TxtDatabase(object):
     def clearAll(self):
         with open(self.path, 'w', encoding=self.encoding) as fl:
             fl.write('{}{}=0{}\n'.format(
-                self.sumSignChar,
+                self.signChar,
                 self.sumString,
-                self.sumSignChar * (self.sumMaxBit + 1)
+                self.signChar * (self.sumMaxBit + 1)
             ))
         return {
             'state': True,
-            'msg': '数据已全部清除{}=0'.format(self.sumString)
+            'msg': '数据已全部清除，此时数据总数{}=0'.format(self.sumString)
         }
 
     # 输出所有数据
@@ -74,13 +74,23 @@ class TxtDatabase(object):
         }
 
     # -----------------------------数据统计
-    # 检查数据总数并格式化文件
+    # 检查是否是txtDb格式的文件(返回True或False)
+    def isTxtDbFile(self):
+        with open(self.path, 'r', encoding=self.encoding) as fl:
+            result = bool(re.search(
+                r'{}{}='.format(self.signChar, self.sumString),
+                fl.readline())
+            )
+        return {
+            'state': True,
+            'data': result
+        }
+
+    # 检查数据总数或格式化文件为txtDb
     @tryFunc
-    def sumCheck(self):
+    def initTxtDb(self):
         count = 0
         with open(self.path, 'r', encoding=self.encoding) as fl:
-            firstLine = fl.readline()
-            fl.seek(0)
             while (fl.readline()):
                 count += 1
 
@@ -88,7 +98,7 @@ class TxtDatabase(object):
         if (count == 0):
             self.clearAll()
         # 已格式化db，修正数据总量
-        elif (re.search(r'{}='.format(self.sumString), firstLine)):
+        elif (self.isTxtDbFile()['data']):
             self.setDataSum(count - 1)
             count -= 1
         # 没格式化db
@@ -98,21 +108,47 @@ class TxtDatabase(object):
                 with open(self.path, 'r+', encoding=self.encoding) as newFile:
                     # 写入第一行统计信息
                     newFile.write('{}{}={}{}\n'.format(
-                        self.sumSignChar,
+                        self.signChar,
                         self.sumString,
                         count,
-                        self.sumSignChar * (self.sumMaxBit + 2 - bit)
+                        self.signChar * (self.sumMaxBit + 2 - bit)
                     ))
                     # 写入原数据
                     line = oldFile.readline()
                     while (line):
-                        newFile.write(self.sumSignChar + line)
+                        newFile.write(self.signChar + line)
                         line = oldFile.readline()
                     newFile.truncate()
 
         return {
             'state': True,
-            'msg': '数据库文件已格式化修正{}={}'.format(self.sumString, count)
+            'msg': '文件已格式化修正为txtDb格式，此时数据总数{}={}'.format(self.sumString, count)
+        }
+
+    # 将txtDb文件转换回普通txt文件
+    def fallback(self):
+        # 判断是否为txtDb文件
+        if (not self.isTxtDbFile()['data']):
+            return {
+                'state': True,
+                'msg': '该文件为非txtDb格式文件，无需转换'
+            }
+        # 开始转换
+        with open(self.path, 'r', encoding=self.encoding) as oldFile:
+            with open(self.path, 'r+', encoding=self.encoding) as newFile:
+                # 定位
+                oldFile.readline()
+                newFile.seek(0)
+                # 开始写入
+                line = oldFile.readline()
+                while (line):
+                    newFile.write(line[1:])
+                    line = oldFile.readline()
+                newFile.truncate()
+
+        return {
+            'state': True,
+            'msg': 'txtDb格式文件已转回普通文件'
         }
 
     # 获取数据总数
@@ -130,23 +166,23 @@ class TxtDatabase(object):
         bit = len(str(dataSum))
         with open(self.path, 'r+', encoding=self.encoding) as fl:
             fl.write('{}{}={}{}'.format(
-                self.sumSignChar,
+                self.signChar,
                 self.sumString,
                 dataSum,
-                self.sumSignChar * (self.sumMaxBit + 2 - bit)
+                self.signChar * (self.sumMaxBit + 2 - bit)
             ))
         return {
             'state': True,
-            'msg': '数据总数设置完成{}={}'.format(self.sumString, dataSum)
+            'msg': '数据总数已设置为{}={}'.format(self.sumString, dataSum)
         }
 
     # -----------------------------增
     # 追加一条数据
     @tryFunc
-    def addOneData(self, data, updata=True):
+    def addOneData(self, data, update=True):
         with open(self.path, 'a+', encoding=self.encoding) as fl:
-            fl.write('{}{}\n'.format(self.sumSignChar, data))
-        if (updata):
+            fl.write('{}{}\n'.format(self.signChar, data))
+        if (update):
             self.setDataSum(self.getDataSum()['data'] + 1)
         return {
             'state': True,
@@ -236,7 +272,7 @@ class TxtDatabase(object):
         }
 
     # 查找指定内容的一条数据的索引(索引从1开始，不存在返回-1)
-    # 返回索引系列
+    # 返回索引序列
     @tryFunc
     def findOneData(self, data):
         return {
@@ -272,7 +308,7 @@ class TxtDatabase(object):
                     if ((curLine - 1) not in dataDict.keys()):
                         newFile.write(nextLine)
                     else:
-                        newFile.write('{}{}\n'.format(self.sumSignChar, dataDict[curLine - 1]))
+                        newFile.write('{}{}\n'.format(self.signChar, dataDict[curLine - 1]))
                         modifyDict[curLine - 1] = '{}=>{}'.format(
                             nextLine[1:].rstrip('\n'),
                             dataDict[curLine - 1]
@@ -305,7 +341,7 @@ class TxtDatabase(object):
                     if (data not in dataDict.keys()):
                         newFile.write(nextLine)
                     else:
-                        newFile.write('{}{}\n'.format(self.sumSignChar, dataDict[data]))
+                        newFile.write('{}{}\n'.format(self.signChar, dataDict[data]))
                         modifyDict[curLine - 1] = '{}=>{}'.format(
                             data,
                             dataDict[data]
@@ -366,12 +402,12 @@ class TxtDatabase(object):
     # 返回删除索引序列
     @tryFunc
     def deleteOneData(self, data):
-        index = self.findOneData(data)['data']
-        self.deleteIndexData(index)
+        indexArray = self.findOneData(data)['data']
+        self.deleteIndexData(indexArray)
 
         return {
             'state': True,
-            'msg': index
+            'msg': indexArray
         }
 
     # 删除指定内容的所有数据
