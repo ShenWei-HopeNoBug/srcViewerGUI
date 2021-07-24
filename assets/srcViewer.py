@@ -1,6 +1,8 @@
 # -*- coding: GB2312 -*-
 
 import os
+# 按windows文件名排序方式排序
+from natsort import ns, natsorted
 
 
 # ------------去除被包含的路径和重名的路径(输入\\的绝对路径)
@@ -48,18 +50,35 @@ def pathDetection(pathList):
 # dirIgnore：忽略文件夹根目录序列
 # extIgnore：指定要忽略的文件的扩展名
 # extList：指定要操作的文件的扩展名
-# sizeOption：指定筛选文件大小和超出范围是否写入默认路径(0：不写入，1：写入)
-def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
-                    sizeOption=[0, 4, 1], outChar='#'):
+# sizeOption：
+#   range指定筛选文件大小
+#   addSign超出范围是否添加标记(0：不写入，1：写入)
+#   signChar标记字符
+def getSortPathList(dirList=[], dirIgnore=[], extList=[], extIgnore=[],
+                    sizeOption={}):
+    sizeOptionDefault = {
+        'range': [0, 10240],
+        'addSign': 1,
+        'signChar': '#'
+    }
+    # 用默认配置补全未配置的sizeOption
+    sizeOptionKeys = sizeOption.keys()
+    if len(sizeOptionKeys):
+        for key in sizeOptionDefault.keys():
+            if key not in sizeOptionKeys:
+                sizeOption[key] = sizeOptionDefault[key]
+    else:
+        sizeOption = sizeOptionDefault
+    # 在超出大小的路径前加的字符是否为空
+    if not sizeOption['signChar']:
+        sizeOption['signChar'] = sizeOptionDefault['signChar']
     # 去除不存在的文件夹路径
-    dirList = [path for path in dirList if os.path.exists(path)]
+    if dirList:
+        dirList = [path for path in dirList if os.path.exists(path)]
     if dirIgnore:
         dirIgnore = [path for path in dirIgnore if os.path.exists(path)]
-    # 在超出大小的路径前加的字符是否为空
-    if not outChar:
-        sizeOption[2] = 0
-    filePathList = []  # 保存结果
     # 扫描所有文件
+    filePathList = []  # 保存结果
     while dirList:
         dirRoot = os.walk(dirList.pop(0))
         for root, dirs, files in dirRoot:
@@ -68,29 +87,33 @@ def getSortPathList(dirList, dirIgnore=[], extList=[], extIgnore=[],
             # 去除忽略的文件夹
             dirs = [path for path in dirs
                     if os.path.join(root, path) not in dirIgnore]
+            dirs = natsorted(dirs, alg=ns.PATH)  # 按windows风格排序
+
+            # 既有忽略的扩展名又有筛选的扩展名
             if extIgnore and extList:
                 files = [file for file in files
                          if os.path.splitext(file)[-1] not in extIgnore and
                          os.path.splitext(file)[-1] in extList
                          ]
-            # 把要忽略的文件去除
+            # 忽略扩展名
             elif extIgnore:
                 files = [file for file in files
                          if os.path.splitext(file)[-1] not in extIgnore]
 
-            # 把指定的文件类型筛选出来
+            # 筛选扩展名
             elif extList:
                 files = [file for file in files
                          if os.path.splitext(file)[-1] in extList]
 
+            files = natsorted(files, alg=ns.PATH)  # 按windows风格排序
             # 拼接路径和筛选大小
             for file in files:
                 path = os.path.join(root, file)
                 fileSize = os.path.getsize(path) / float(1024 * 1024)
-                if (fileSize <= sizeOption[1] and fileSize >= sizeOption[0]):
+                if fileSize <= sizeOption['range'][1] and fileSize >= sizeOption['range'][0]:
                     filePathList.append(path)
-                elif (sizeOption[2]):
-                    filePathList.append('{}{}'.format(outChar, path))
+                elif sizeOption['addSign']:
+                    filePathList.append('{}{}'.format(sizeOption['signChar'], path))
 
     return filePathList
 

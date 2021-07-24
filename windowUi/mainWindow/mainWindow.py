@@ -161,10 +161,13 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         sizeOption = dbStateCheck(
             self,
             self.txtDb.findIndexData,
-            ['', '0', '10', '0'],
-            [[3, 4, 5, 6]]
+            ['0', '10', '0'],
+            [[4, 5, 6]]
         )
-        pathSetingList.append([int(seting) for seting in sizeOption[1:]])
+        pathSetingList.append({
+            'range': [int(sizeOption[0]), int(sizeOption[1])],
+            'addSign': int(sizeOption[2])
+        })
         # 转换成绝对路径
         pathSetingList[0] = [os.path.abspath(path) for path in pathSetingList[0]]
         pathSetingList[1] = [os.path.abspath(path) for path in pathSetingList[1]]

@@ -57,15 +57,19 @@ if __name__ == '__main__':
     for path in pathList:
         print(path)
     print('----->开始搜索')
+    sizeOption = {
+            'range': [0, 4],
+            # 'addSign': 0,
+            # 'signChar': ''
+        }
     res = getSortPathList(
         pathList,
         pathIgnore,
         ['.txt', '.mp4'],
         ['.xls'],
-        [0, 2, 1],
-        'lala'
+        sizeOption
     )
     print('>>文件：')
     for path in res:
-        print(path, '---大小{}'.format(os.path.getsize(path)))
+        print(path)
     sys.exit(0)
