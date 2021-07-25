@@ -7,11 +7,12 @@ import webbrowser
 from PyQt5 import QtWidgets, QtGui
 from .mainWindow_ui import Ui_mainWindow
 from windowUi.setingWindow.setingWindow import SetingWindow
+from windowUi.browserSelect.browserSelect import BrowserSelect
 from assets.publicTools import (
     errMsgBox,
     dbStateCheck,
     repeatDirPathHandle,
-    fileAllExists
+    fileAllExists,
 )
 from assets.txtDataBase import TxtDatabase
 from assets.srcViewer import (
@@ -35,10 +36,12 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         self.selectedRow = -1  # 选中listItem的索引(-1代表没选中)
         self.setingSum = 0  # 设置总数
         self.historySeting = ''  # 设置历史记录
+        self.signData = ''  # 从子窗口收到的数据
         # 初始化Ui
         self.initUi()
         # 绑定事件
         self.listWidget.itemClicked.connect(self._itemShow)
+        self.listWidget.itemActivated.connect(self._itemShow)
         self.btnLoadSeting.clicked.connect(self._loadSeting)
         self.btnModifySeting.clicked.connect(self._modifySeting)
         self.btnNewSeting.clicked.connect(self._newSeting)
@@ -49,7 +52,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     @errMsgBox
     def initUi(self):
         self.setupUi(self)
-        self.setWindowTitle('资源预览v1.02      浙工大机械B406')
+        self.setWindowTitle('资源预览v1.04      浙工大机械B406')
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.setFixedSize(self.width(), self.height())
         # 设置美化样式
@@ -178,6 +181,10 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         else:
             self.stateLabel.setText('状态：无修改')
 
+    # 接收从子窗口传来的数据
+    def getSignData(self, signData):
+        self.signData = signData
+
     # 弹出提示框
     def infoBox(self, msg):
         QtWidgets.QMessageBox.information(
@@ -257,11 +264,25 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     # 打开浏览器
     @errMsgBox
     def _openBrowser(self, event):
-        browserPath = "./browser/html/index.html"
-        if (not os.path.exists(browserPath)):
+        htmlPath = "./browser/html/index.html"
+        if (not os.path.exists(htmlPath)):
             self.infoBox('\n预览html文件不存在！\n')
-        if (self.questionBox('\n是否打开浏览器？\n') == QtWidgets.QMessageBox.Yes):
-            webbrowser.open(os.path.abspath(browserPath))
+        if (self.questionBox('\n是否使用默认浏览器？\n') == QtWidgets.QMessageBox.Yes):
+            webbrowser.open(os.path.abspath(htmlPath))
+        else:
+            # 打开子窗口
+            selectWindow = BrowserSelect()
+            selectWindow._signal.connect(self.getSignData)
+            selectWindow.exec()
+            if (not self.signData): return
+            # 选择浏览器
+            if (self.signData == 'default'):
+                # 用默认浏览器打开
+                webbrowser.open(os.path.abspath(htmlPath))
+            else:
+                # 用指定浏览器打开
+                webbrowser.register('selected', None, webbrowser.BackgroundBrowser(self.signData))
+                webbrowser.get('selected').open(os.path.abspath(htmlPath), new=1, autoraise=True)
 
     # 显示选中项
     @errMsgBox

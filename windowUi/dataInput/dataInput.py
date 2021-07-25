@@ -33,8 +33,8 @@ class DataInput(QtWidgets.QDialog, Ui_dataInput):
         if (not self.initTxt == ''):
             self.textEdit.append(self.initTxt)
             self.textEdit.verticalScrollBar().setValue(0)
-            # 设置美化样式
-            self.setWindowOpacity(0.95)
+        # 设置美化样式
+        self.setWindowOpacity(0.95)
         winStyle = '''
         #dataInput{
             background-color:rgb(255, 224, 178);

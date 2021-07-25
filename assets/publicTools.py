@@ -1,6 +1,7 @@
 # -*- coding: GB2312 -*-
 
 import os
+import winreg
 from collections import Counter
 from PyQt5 import QtWidgets
 
@@ -84,6 +85,18 @@ def fileAllExists(baseDir, fileList):
         'state': True,
         'msg': 0
     }
+
+
+# 从注册表搜索指定浏览器的路径(不存在返回空字符串)
+# mainkey注册表主键值
+# subkey注册表局部键值
+def findBrowserPath(subkey, mainkey=winreg.HKEY_LOCAL_MACHINE):
+    try:
+        key = winreg.OpenKey(mainkey, subkey)
+    except FileNotFoundError:
+        return ''
+    value, type = winreg.QueryValueEx(key, "")  # 获取默认值
+    return value.split(',')[0]
 
 
 # 找出列表重复的数据和索引列表(返回字典,索引从0开始)
