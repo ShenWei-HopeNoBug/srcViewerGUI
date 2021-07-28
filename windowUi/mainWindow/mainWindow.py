@@ -267,9 +267,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         htmlPath = "./browser/html/index.html"
         if (not os.path.exists(htmlPath)):
             self.infoBox('\n预览html文件不存在！\n')
-        if (self.questionBox('\n是否使用默认浏览器？\n') == QtWidgets.QMessageBox.Yes):
-            webbrowser.open(os.path.abspath(htmlPath))
-        else:
+        if (self.questionBox('\n是否打开浏览器？\n') == QtWidgets.QMessageBox.Yes):
             # 打开子窗口
             selectWindow = BrowserSelect()
             selectWindow._signal.connect(self.getSignData)
@@ -283,6 +281,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
                 # 用指定浏览器打开
                 webbrowser.register('selected', None, webbrowser.BackgroundBrowser(self.signData))
                 webbrowser.get('selected').open(os.path.abspath(htmlPath), new=1, autoraise=True)
+            self.signData = ''
 
     # 显示选中项
     @errMsgBox
