@@ -4,6 +4,8 @@
 #/browser/
 /build/
 /dist/
+/seting/
+/config/
 
 # FILE
 /package.txt
