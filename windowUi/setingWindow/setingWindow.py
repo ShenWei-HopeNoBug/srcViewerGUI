@@ -33,6 +33,7 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         # 设置单选按钮分组
         self.rbtnGroup.addButton(self.rbtnImage, id=1)
         self.rbtnGroup.addButton(self.rbtnVideo, id=2)
+        self.rbtnGroup.addButton(self.rbtnMusic, id=3)
         # 设置点击按钮分组
         self.btnGroup.addButton(self.btnDirList, id=0)
         self.btnGroup.addButton(self.btnDirIgnore, id=1)
@@ -103,17 +104,19 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     def loadSeting(self):
         # 操作数据库
         self.txtDb.path = self.dbBaseDir + self.dbPathList[4]  # 修改dbtxt路径
-        self.otherSeting = dbStateCheck(self, self.txtDb.printDatas, ['3', '1', '1', '0', '10', '0'])
+        self.otherSeting = dbStateCheck(self, self.txtDb.printDatas, ['3', '1', '/image', '0', '10', '0'])
         # 设置计数框
         self.spinBoxMaxRow.setValue(int(self.otherSeting[0]))
         self.spinBoxStartPage.setValue(int(self.otherSeting[1]))
         self.spinBoxSizeMin.setValue(int(self.otherSeting[3]))
         self.spinBoxSizeMax.setValue(int(self.otherSeting[4]))
         # 设置单选按钮
-        if (self.otherSeting[2] == '1'):
+        if (self.otherSeting[2] == '/image'):
             self.rbtnImage.click()
-        else:
+        elif (self.otherSeting[2] == '/video'):
             self.rbtnVideo.click()
+        elif (self.otherSeting[2] == '/music'):
+            self.rbtnMusic.click()
         # 设置勾选框
         if (int(self.otherSeting[5])):
             self.checkBoxPlace.click()
@@ -124,6 +127,14 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
         dbWorkPath = self.dbBaseDir + self.dbPathList[dbPathIndex]
         modifyWindow = DataManager(dataName, dbWorkPath)
         modifyWindow.exec()
+
+    # 弹出提示框
+    def infoBox(self, msg):
+        QtWidgets.QMessageBox.information(
+            self,
+            "提醒",
+            msg
+        )
 
     # 弹出询问框
     def questionBox(self, msg):
@@ -138,8 +149,8 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     # 保存修改的otherSeting配置
     @errMsgBox
     def savOtherSeting(self):
-        # 操作数据库
         modifyDict = {index + 1: value for index, value in enumerate(self.otherSeting)}
+        # 操作数据库
         self.txtDb.path = self.dbBaseDir + self.dbPathList[4]  # 修改dbtxt路径
         dbStateCheck(self, self.txtDb.modifyIndexData, None, [modifyDict])
 
@@ -157,7 +168,7 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     def _maxRowChanged(self, value):
         self.otherSeting[0] = str(value)
 
-    # 最大行数变化
+    # 起始页码变化
     @errMsgBox
     def _startPageChanged(self, value):
         self.otherSeting[1] = str(value)
@@ -166,7 +177,13 @@ class SetingWindow(QtWidgets.QDialog, Ui_setingWindow):
     @errMsgBox
     def _modelChanged(self, rbtn):
         # 存储按钮id号
-        self.otherSeting[2] = str(self.rbtnGroup.id(rbtn))
+        id = self.rbtnGroup.id(rbtn)
+        if (id == 1):
+            self.otherSeting[2] = '/image'
+        elif (id == 2):
+            self.otherSeting[2] = '/video'
+        else:
+            self.otherSeting[2] = '/music'
 
     # 文件大小下限变化
     @errMsgBox

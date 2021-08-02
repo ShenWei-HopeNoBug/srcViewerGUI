@@ -6,6 +6,8 @@
 /dist/
 /seting/
 /config/
+/example/
+/cover/
 
 # FILE
 /package.txt

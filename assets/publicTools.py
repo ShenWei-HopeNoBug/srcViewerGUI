@@ -3,6 +3,7 @@
 import os
 import winreg
 from collections import Counter
+from mutagen import File
 from PyQt5 import QtWidgets
 
 
@@ -64,6 +65,16 @@ def repeatDirPathHandle(oldPath):
     return newPath
 
 
+def repeatFilePathHandle(oldPath):
+    num = 1
+    name, ext = os.path.splitext(oldPath)
+    newPath = oldPath
+    while (os.path.exists(newPath)):
+        newPath = '{}_{}{}'.format(name, num, ext)
+        num = num + 1
+    return newPath
+
+
 # 检查配置文件是否完整存在
 # 完整存在：{'state': True,'msg': 0}
 # 不存在：{'state': True,'msg': 1}
@@ -114,3 +125,32 @@ def repeatCount(array):
             if (not count):
                 break
     return res
+
+
+# 提取歌曲信息
+def getMusicInfo(path):
+    if os.path.exists(path):
+        afile = File(path)
+        try:
+            title = afile.tags['TIT2']
+        except Exception as err:
+            title = ''
+        try:
+            artist = afile.tags['TPE1']
+        except Exception as err:
+            artist = ''
+        try:
+            cover = afile.tags['APIC:']
+            coverData = cover.data
+            coverExt = cover.mime.split('/')[-1]
+        except Exception as err:
+            coverData = ''
+            coverExt = ''
+        return {
+            'title': title,
+            'artist': artist,
+            'cover': {
+                'data': coverData,
+                'ext': coverExt
+            }
+        }

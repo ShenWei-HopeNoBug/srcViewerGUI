@@ -3,6 +3,8 @@
 import os
 # 按windows文件名排序方式排序
 from natsort import ns, natsorted
+from assets.txtDataBase import TxtDatabase
+from assets.publicTools import getMusicInfo, repeatFilePathHandle
 
 
 # ------------去除被包含的路径和重名的路径(输入\\的绝对路径)
@@ -119,18 +121,71 @@ def getSortPathList(dirList=[], dirIgnore=[], extList=[], extIgnore=[],
 
 
 # 把路径写入JS文件中'GB18030'
-def writePathTojs(pathList, savPath, encoding='GB18030'):
-    pathList = ['"{}",'.format(path).replace('\\', '/') for path in pathList]
-    data = 'const pathList=[{}];'.format('\n'.join(pathList))
+def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18030'):
+    # 换成左斜杠
+    pathList = [path.replace('\\', '/') for path in pathList]
+    if initPath == '/image':
+        pathList = ['"{}",'.format(path) for path in pathList]
+        data = 'const imgPath=[{}];'.format('\n'.join(pathList))
+    elif initPath == '/video':
+        pathList = ['"{}",'.format(path) for path in pathList]
+        data = 'const videoPath=[{}];'.format('\n'.join(pathList))
+    elif initPath == '/music':
+        dataList = []
+        for path in pathList:
+            tmpPath = path
+            # 大小超范围
+            if(path[0]=='#'):
+                tmpPath=tmpPath[1:]
+            infoDict = getMusicInfo(tmpPath)
+            title, artist, cover = infoDict['title'], infoDict['artist'], infoDict['cover']
+            # 没有名字用文件名
+            if not title:
+                file = tmpPath.split('/')[-1]
+                title = os.path.splitext(file)[0]
+            # 有封面保存封面
+            coverUrl = ''
+            if cover['data']:
+                # 换成绝对路径和左斜杠
+                coverUrl = repeatFilePathHandle('{}/{}.{}'.format(coverDir, title, cover['ext']))
+                coverUrl = os.path.abspath(coverUrl).replace('\\', '/')
+                with open(coverUrl, 'wb') as img:
+                    img.write(cover['data'])
+            # 音频信息
+            info = 'path:"{0}",title:"{1}",artist:"{2}",coverUrl:"{3}",'.format(
+                path,
+                title,
+                artist,
+                coverUrl,
+            )
+            dataList.append('{' + info + '},')
+        data = 'const musicPath=[{}];'.format('\n'.join(dataList))
+    else:
+        return
     with open(savPath, 'w', encoding=encoding) as fl:
         fl.write(data)
 
 
 # 把显示信息写入JS文件中'GB18030'
-def writeShowTojs(savPath, maxRow=3, startPage=1, model=1, encoding='GB18030'):
-    listType = 'image'
-    if model == 2:
-        listType = 'video'
-    data = 'const maxRow={};\nconst listType="{}";\nlet page={};'.format(maxRow, listType, startPage)
-    with open(savPath, 'w', encoding=encoding) as fl:
-        fl.write(data)
+def writeShowTojs(savPath, maxRow=3, startPage=1, initPath='/image', encoding='GB18030'):
+    # 修改内容字典
+    modifyDict = {1: 'const initPath = "{}";'.format(initPath)}
+    if initPath == '/image':
+        modifyDict[2] = 'const imgPage = {};'.format(startPage)
+        modifyDict[3] = 'const imgRow = {};'.format(maxRow)
+    elif initPath == '/video':
+        modifyDict[4] = 'const videoPage = {};'.format(startPage)
+        modifyDict[5] = 'const videoRow = {};'.format(maxRow)
+    elif initPath == '/music':
+        modifyDict[6] = 'const musicPage = {};'.format(startPage)
+        modifyDict[7] = 'const musicRow = {};'.format(maxRow)
+    else:
+        return
+    # 实例化txtDb
+    txtDb = TxtDatabase(savPath)
+    txtDb.encoding = encoding
+    # 格式化js文件为txtDb格式
+    txtDb.initTxtDb()
+    txtDb.modifyIndexData(modifyDict)
+    # 转回普通js文件
+    txtDb.fallback()

@@ -37,6 +37,13 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         self.setingSum = 0  # 设置总数
         self.historySeting = ''  # 设置历史记录
         self.signData = ''  # 从子窗口收到的数据
+        self.initSeting = [
+            ['./example'],
+            [],
+            ['.png', '.jpg', '.gif'],
+            [],
+            ['3', '1', '/image', '0', '10', '0'],
+        ]  # 新建配置的默认配置
         # 初始化Ui
         self.initUi()
         # 绑定事件
@@ -130,19 +137,12 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         dbBaseDir = './seting/default'
         if (not os.path.exists(dbBaseDir)):
             os.makedirs(dbBaseDir)
-        initData = [
-            ['./browser/src/img'],
-            [],
-            ['.png', '.jpg', '.gif'],
-            [],
-            ['3', '1', '1', '0', '10', '0'],
-        ]
         for index, flie in enumerate(self.dbPathList):
             setingPath = dbBaseDir + flie
             if (not os.path.exists(setingPath)):
                 self.txtDb.path = setingPath
                 self.txtDb.clearAll()
-                self.txtDb.addDatas(initData[index])
+                self.txtDb.addDatas(self.initSeting[index])
 
     # ------------------------------基本方法
     # 加载配置列表
@@ -216,12 +216,13 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         sizeOption = dbStateCheck(
             self,
             self.txtDb.findIndexData,
-            ['0', '10', '0'],
-            [[4, 5, 6]]
+            ['/image', '0', '10', '0'],
+            [[3, 4, 5, 6]]
         )
+        initPath = sizeOption[0]
         pathSetingList.append({
-            'range': [int(sizeOption[0]), int(sizeOption[1])],
-            'addSign': int(sizeOption[2])
+            'range': [int(sizeOption[1]), int(sizeOption[2])],
+            'addSign': int(sizeOption[3])
         })
         # 转换成绝对路径
         pathSetingList[0] = [os.path.abspath(path) for path in pathSetingList[0]]
@@ -237,7 +238,22 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         if (not pathList):
             self.infoBox('\n检索目录无指定文件！\n')
             return False
-        writePathTojs(pathList, "./browser/js/pathList.js")
+        savBasePath = './browser/pubilc/js'
+        coverDir = './cover'
+        if (initPath == '/image'):
+            savPath = savBasePath + '/imgPath.js'
+        elif (initPath == '/video'):
+            savPath = savBasePath + '/videoPath.js'
+        elif (initPath == '/music'):
+            savPath = savBasePath + '/musicPath.js'
+            # 删除原来的封面文件夹
+            if (os.path.exists(coverDir)):
+                shutil.rmtree(coverDir)
+            os.makedirs(coverDir)
+        else:
+            self.infoBox('\n载入路径出错！\n')
+            return False
+        writePathTojs(pathList, savPath, initPath, coverDir)
         return True
 
     # 读取显示配置并写入JS
@@ -246,12 +262,13 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         showSetingList = dbStateCheck(
             self,
             self.txtDb.findIndexData,
-            ['3', '1', '1'],
+            ['3', '1', '/image'],
             [[1, 2, 3]]
         )
-        showSetingList = [int(value) for value in showSetingList]
+        showSetingList[0] = int(showSetingList[0])
+        showSetingList[1] = int(showSetingList[1])
         # 写入显示配置
-        writeShowTojs("./browser/js/options.js", *showSetingList)
+        writeShowTojs("./browser/pubilc/js/options.js", *showSetingList)
 
     # 关闭窗口确认
     def closeEvent(self, event):
@@ -264,7 +281,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     # 打开浏览器
     @errMsgBox
     def _openBrowser(self, event):
-        htmlPath = "./browser/html/index.html"
+        htmlPath = "./browser/index.html"
         if (not os.path.exists(htmlPath)):
             self.infoBox('\n预览html文件不存在！\n')
         if (self.questionBox('\n是否打开浏览器？\n') == QtWidgets.QMessageBox.Yes):
@@ -388,17 +405,10 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
         setingName = basePath.split('/')[-1]
         # 新建配置文件夹和文件
         os.makedirs(basePath)
-        initData = [
-            ['./browser/src/img'],
-            [],
-            ['.png', '.jpg', '.gif'],
-            [],
-            ['3', '1', '1', '0', '10', '0'],
-        ]
         for index, file in enumerate(self.dbPathList):
             self.txtDb.path = basePath + file
             self.txtDb.clearAll()
-            self.txtDb.addDatas(initData[index])
+            self.txtDb.addDatas(self.initSeting[index])
         self.listWidget.addItem(setingName)
         self.setingSum += 1
         # 操作数据库
