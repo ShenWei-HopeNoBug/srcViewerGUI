@@ -148,21 +148,21 @@ def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18
             # 有封面保存封面
             coverUrl = ''
             if cover['data']:
-                imgTitle = exg.sub('', str(title))  # 去除解析文件名中的敏感字符
+                imgTitle = exg.sub('', title)  # 去除解析文件名中的敏感字符
                 imgPath = '{}/{}.{}'.format(coverDir, imgTitle, cover['ext'])
                 # 处理重名文件
                 coverUrl = repeatFilePathHandle(imgPath)
                 coverUrl = os.path.abspath(coverUrl).replace('\\', '/')
                 with open(coverUrl, 'wb') as img:
                     img.write(cover['data'])
-            # 音频信息
-            info = 'path:"{0}",title:"{1}",artist:"{2}",coverUrl:"{3}",'.format(
-                path,
-                title,
-                artist,
-                coverUrl,
+            # 音频信息(将敏感字符'前面加\，防止前端解析失败)
+            info = '"path":"{0}","title":"{1}","artist":"{2}","coverUrl":"{3}"'.format(
+                path.replace("'", "\\'"),
+                title.replace("'", "\\'"),
+                artist.replace("'", "\\'"),
+                coverUrl.replace("'", "\\'"),
             )
-            dataList.append('{' + info + '},')
+            dataList.append("'{" + info + "}',")  # 拼成JSON字符串
         data = 'const musicPath=[{}];'.format('\n'.join(dataList))
     else:
         return

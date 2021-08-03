@@ -147,8 +147,8 @@ def getMusicInfo(path):
             coverData = ''
             coverExt = ''
         return {
-            'title': title,
-            'artist': artist,
+            'title': str(title),
+            'artist': str(artist),
             'cover': {
                 'data': coverData,
                 'ext': coverExt
