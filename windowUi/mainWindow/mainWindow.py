@@ -59,7 +59,7 @@ class MainWindow(QtWidgets.QWidget, Ui_mainWindow):
     @errMsgBox
     def initUi(self):
         self.setupUi(self)
-        self.setWindowTitle('资源预览v1.04      浙工大机械B406')
+        self.setWindowTitle('资源预览v1.10      浙工大机械B406')
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.setFixedSize(self.width(), self.height())
         # 设置美化样式

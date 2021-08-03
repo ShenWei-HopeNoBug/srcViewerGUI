@@ -1,6 +1,7 @@
 # -*- coding: GB2312 -*-
 
 import os
+import re
 # 按windows文件名排序方式排序
 from natsort import ns, natsorted
 from assets.txtDataBase import TxtDatabase
@@ -132,11 +133,12 @@ def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18
         data = 'const videoPath=[{}];'.format('\n'.join(pathList))
     elif initPath == '/music':
         dataList = []
+        exg = re.compile(r'[/:*?\\<>"]')  # 处理特殊字符正则对象
         for path in pathList:
             tmpPath = path
             # 大小超范围
-            if(path[0]=='#'):
-                tmpPath=tmpPath[1:]
+            if (path[0] == '#'):
+                tmpPath = tmpPath[1:]
             infoDict = getMusicInfo(tmpPath)
             title, artist, cover = infoDict['title'], infoDict['artist'], infoDict['cover']
             # 没有名字用文件名
@@ -146,8 +148,10 @@ def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18
             # 有封面保存封面
             coverUrl = ''
             if cover['data']:
-                # 换成绝对路径和左斜杠
-                coverUrl = repeatFilePathHandle('{}/{}.{}'.format(coverDir, title, cover['ext']))
+                imgTitle = exg.sub('', str(title))  # 去除解析文件名中的敏感字符
+                imgPath = '{}/{}.{}'.format(coverDir, imgTitle, cover['ext'])
+                # 处理重名文件
+                coverUrl = repeatFilePathHandle(imgPath)
                 coverUrl = os.path.abspath(coverUrl).replace('\\', '/')
                 with open(coverUrl, 'wb') as img:
                     img.write(cover['data'])
