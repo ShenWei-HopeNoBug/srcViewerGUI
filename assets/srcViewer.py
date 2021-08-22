@@ -145,9 +145,9 @@ def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18
             if not title:
                 file = tmpPath.split('/')[-1]
                 title = os.path.splitext(file)[0]
-            # 有封面保存封面
+            # 有封面且没超出大小范围保存封面
             coverUrl = ''
-            if cover['data']:
+            if cover['data'] and path[0] != '#':
                 imgTitle = exg.sub('', title)  # 去除解析文件名中的敏感字符
                 imgPath = '{}/{}.{}'.format(coverDir, imgTitle, cover['ext'])
                 # 处理重名文件
@@ -157,10 +157,10 @@ def writePathTojs(pathList, savPath, initPath, coverDir='/cover', encoding='GB18
                     img.write(cover['data'])
             # 音频信息(将敏感字符'前面加\，防止前端解析失败)
             info = '"path":"{0}","title":"{1}","artist":"{2}","coverUrl":"{3}"'.format(
-                path.replace("'", "\\'"),
-                title.replace("'", "\\'"),
-                artist.replace("'", "\\'"),
-                coverUrl.replace("'", "\\'"),
+                path.replace("'", "\\'").replace('"', '\\"'),
+                title.replace("'", "\\'").replace('"', '\\"'),
+                artist.replace("'", "\\'").replace('"', '\\"'),
+                coverUrl.replace("'", "\\'").replace('"', '\\"'),
             )
             dataList.append("'{" + info + "}',")  # 拼成JSON字符串
         data = 'const musicPath=[{}];'.format('\n'.join(dataList))
